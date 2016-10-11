@@ -18,7 +18,7 @@ sublist(S, L):-append(_, L1, L), append(S, _, L1).
 delete_three_last([_, _, _], []).
 delete_three_last([X|[Y, Z, U], [X|V]):-delete_three_last([Y, Z, U], V).
 
-min_elt([H],H).
-min_elt([H|T],H) :- min_elt(T,Q), H<Q.
-min_elt([H|T],Q) :- min_elt(T,Q), H>=Q.
+min_elem([X],X).
+min_elem([X|T],X):-min_elt(T,Y), X<Y.
+min_elem([X|T],Y):-min_elt(T,Y), X>=Y.
 
